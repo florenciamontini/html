@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+    <form action="./enviar.php" method="get"> <!--ACTION aca ponemos el archivo .php, indica el camino para llegar al archivo del servior escrito en el programa de backend que procesa los datos que introdujo el user en el form // METHOD get o post , es cómo se envian los datos desde mi computadora hacia nuestro server GET envia los datos dentro de la URL, y POST no envia por URL sino que los envia dentro de un payload-->
+
+    <!--COMPONENTES DE FORMS-->
+    <!--Label: nombre descriptivo del campo-->
+    <label for="name">Nombre:</label>
+    <!--Campos de texto: campos donde el user completa-->
+    <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        maxlength="10" 
+        placeholder="Ingresa tu Nombre">
+        <br><br> <!--forma 1 de asoc-->
+    <!--¿Como asociar el label al campo?-->
+    <!--forma 2:-->
+    <label>Apellido: <input type="text" maxlength="10" id="surname" name="surname"></label><br><br>
+    <label>Contraseña <input type="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"></label> <!--Pattern: html5pattern.com/Passwords--><br><br>
+    <label>E-mail</label><input type="email" placeholder="Escribi tu mail completo"><br><br>
+    <label>Edad</label><input type="number" min="18" max="150"> <br><br>
+    <!--Primer forma de declarar botones-->
+    <input type="submit" value="Submitir">    <!--para enviar informacion--><br><br>
+    <input type="reset"> <!--limpiar campos del form-->
+    <!--Segunda forma de declarar botones-->
+    <button onclick="alert('Hola desde Js!')">OTRO BOTON</button>
+    <button type="submit">Enviar</button> <!--igual al anterior submit, pero con distinta sintaxis-->
+
+
+    <!--CheckBox-->
+    <br>
+    <input type="checkbox" value="acepto" name="acepto"> Acepto terminos y condiciones<br>
+    <input type="checkbox" value="acepto2" name="acepto2" checked> Acepto terminos y condiciones  <!--Para que por defecto venga marcado el checkbox-->
+    <!--value y name son para pasarle esos valores al backend y poder saber cual fue la rta del usuario-->
+    <!--RadioButtom-->
+    <br>
+    <label>Color de ojos</label><br><br>
+    <input type="radio" name="colorOjo" value="Verde" >Verde<br>
+    <input type="radio" name="colorOjo" value="Lila" >Lila<br>
+    <input type="radio" name="colorOjo2" value="Marron" >Marron<br>
+    <input type="radio" name="colorOjo2" value="Celeste" >Celeste<br>
+    <!--Si pongo dos name distintos, podré elegir dos opciones (una del primer name, otra del segundo name)-->
+    
+    <label>Seleccione su Provincia</label><br>
+    <select name="provincias">
+        <option value="BsAs">Buenos Aires</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+        <option value="Pampa">La Pampa</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+        <option value="stafe">Santa Fe</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+        <option value="stacruz">Santa Cruz</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+        <option value="selected" Selected>Seleccionar</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+    </select>
+<br>
+<br>
+<br>
+    <!--Para seleccionar mas de uno-->
+    <label>Conocimiento en informatica</label><br>
+    <select name="conocimientos" multiple> <!--multiple sirve para que se pueda seleccionar mas de una opcion manteniendo el ctrl apretado -->
+        <option value="html">HTML</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+        <option value="word">word</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+        <option value="paint">paint</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+        <option value="js">javascript</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+        <option value="selected" Selected>Seleccionar</option><!--value sirve para mandar esa info al backend en caso de seleccionarlo-->
+    </select>
+        
+<br><br>
+    <!--Adjuntar-->
+    <label>Adjuntar tu CV</label>
+    <input type="file" multiple> <!--multiple nos permite adjuntar mas de un file-->
+    <br>
+    </form>
+    </div>
+    
+<textarea name="msje" id="msje" cols="30" rows="10"></textarea>
+
+<!--Validaciones-->
+<label>Edad niños: </label><input type="number" min="0" max="18"> <br><br>
+
+
+</body>
+</html>
+
+<!--nic.ar es la pagina para ver si existe o no el dominio-->
+<!--hosting gratuito: https://ar.000webhost.com/members/website/flormontinieduit/files-->
